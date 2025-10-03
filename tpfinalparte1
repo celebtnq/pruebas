@@ -1,0 +1,52 @@
+let textos = [];
+let fondos = [];
+let pantalla = 0;
+
+function preload () {
+  
+ for (let i = 0; i < 1; i++) {
+  fondos[i] = loadImage ("data/imagen" + i + ".png"); 
+ }
+  
+}
+
+function setup() {
+
+  createCanvas (640, 480);
+  textos = [
+ 
+  "El barco de los padres de Tarzán naufraga en la costa africana. Pese a ello, sobreviven y llegan a la jungla", //0
+  "Construyen una casa en el árbol para protegerse de los peligros de la selva...", //1
+  "El leopardo Sabor ataca y mata a los padres de Tarzán, dejando al bebé solo.", //2
+  "Kala, una gorila, escucha el llanto del bebé. Lo rescata y lo lleva con ella", //3
+  "Kala presenta a Tarzán a la manada de gorilas. Kerchak (el líder) lo rechaza, pero ella decide criarlo", //4
+  "Tarzán crece intentando encajar con los gorilas, aprendiendo a trepar y sobrevivir en la jungla", //5
+  "Tarzán hace amigos, Terk el gorila y Tantor el elefante, juntos superan muchos desafíos", //6
+  "Un día, Tarzán escucha un disparo y se acerca a un campamento de humanos. Allí, salva a Jane de los babuinos", //7
+  "La lleva nuevamente al campamento y conoce al profesor Porter y al cazador Clayton", //8
+  "Clayton le pide a Tarzán que le muestre dónde están los gorilas para estudiarlos...", //9 DECISIÓN
+  "Clayton capturó a los gorilas, traicionando a Tarzán. Le depara una vida solitaria en la jungla, muy arrepentido.", //10 FINAL 1
+  "Tarzán aprende costumbres humanas con Jane, pero nota la ambición de Clayton y crece la tensión.", //11
+  "Clayton revela su plan de capturar gorilas y ataca. Tarzán debe elegir cómo responder...", //12 DECISIÓN
+  "Tarzán lidera la rebelión. Derrota a Clayton, Kerchak lo acepta como líder y Jane se queda en la jungla con él.", //13 FINAL 2
+  "Tarzán abandona la selva y viaja a Inglaterra con Jane y Porter. Se adapta a la civilización pero extraña su hogar gorila, viviendo una vida dividida.", //14 FINAL 3
+
+  ];
+  
+}
+
+
+function draw() {
+  
+  background (180);
+  
+  if (fondos[pantalla]) {
+    image(fondos[pantalla], 0, 0, width, height);
+  }
+  
+  FondoDeTexto(textos[pantalla]);
+  
+
+  
+  
+}
